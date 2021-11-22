@@ -13,12 +13,14 @@ class App extends Component {
   updateCource = (e) => {
     this.setState( {current : e.target.value})
   }
-
+  // add cources
   addCource = (e) => {
     e.preventDefault();
     let current = this.state.current;
     let cources = this.state.cources;
-    cources.push ( {name : current});
+    if (current){
+      cources.push ( {name : current});
+    }
     this.setState({ 
       cources , 
       current : '' 
